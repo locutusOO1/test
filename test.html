@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>recession</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    $("button").on("click", function() {
+        // var apiKey = "uUezM5cnmpAYv6QLScSy38LG42G15wRx";
+        var queryURL = "https://opentdb.com/api.php?amount=10";
+        var results = [];
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function(response) {
+            console.log(response);
+            results = response.results[0];
+            console.log(results);
+        });
+    });
+    </script>
+</body>
+</html>
